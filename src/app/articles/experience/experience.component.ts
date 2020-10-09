@@ -16,14 +16,19 @@ export class ExperienceComponent {
     const tags = new Set();
     resume.jobs.forEach((job) => job.tags.forEach((tag) => tags.add(tag)));
 
-    this.filterTags = [...tags];
+    this.filterTags = [...tags].sort();
     this.data = resume.jobs;
   }
 
   public filterJobs(selectedTags: string[]) {
     this.selectedTags = selectedTags;
-    this.data = resume.jobs.filter((job) =>
-      selectedTags.some((s) => job.tags.includes(s))
-    );
+
+    if (selectedTags && selectedTags.length) {
+      this.data = resume.jobs.filter((job) =>
+        selectedTags.some((s) => job.tags.includes(s))
+      );
+    } else {
+      this.data = resume.jobs;
+    }
   }
 }

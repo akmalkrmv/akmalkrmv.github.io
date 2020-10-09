@@ -62,6 +62,7 @@ export class ChipSelectionComponent {
     }
 
     this.chipCtrl.setValue(null);
+    this.onselected.emit(this.chips);
   }
 
   public remove(chip: string): void {
@@ -69,6 +70,7 @@ export class ChipSelectionComponent {
 
     if (index >= 0) {
       this.chips.splice(index, 1);
+      this.onselected.emit(this.chips);
     }
   }
 
@@ -83,7 +85,7 @@ export class ChipSelectionComponent {
     const filterValue = value.toLowerCase();
 
     return this.list.filter(
-      (chip) => chip.toLowerCase().indexOf(filterValue) === 0
+      (chip) => chip.toLowerCase().indexOf(filterValue) >= 0
     );
   }
 }

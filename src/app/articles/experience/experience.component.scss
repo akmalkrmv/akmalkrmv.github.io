@@ -1,3 +1,5 @@
+@import "src/styles.theme";
+
 .content {
   display: flex;
   flex-direction: column;
@@ -38,9 +40,15 @@
       }
     }
 
+    
+
     .job-footer {
       margin-top: 10px;
       display: flex;
+
+      .location, .website a {
+        color: mat-color($dark-green-accent);
+      }
     }
   }
 }
