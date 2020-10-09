@@ -1,0 +1,46 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .filter {
+    width: 100%;
+    max-width: 920px;
+    margin: 40px auto;
+  }
+
+  .job-list {
+    margin: auto;
+  }
+
+  .job {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > div {
+      min-width: 320px;
+      max-width: 600px;
+    }
+
+    h2 {
+      max-width: 300px;
+    }
+
+    .tags {
+      margin-bottom: 10px;
+      .mat-chip {
+        font-size: 12px;
+      }
+      .mat-standard-chip {
+        padding: 6px;
+        border-radius: 2px;
+        min-height: 20px;
+      }
+    }
+
+    .job-footer {
+      margin-top: 10px;
+      display: flex;
+    }
+  }
+}

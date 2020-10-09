@@ -1,71 +1,48 @@
 <article class="block mat-elevation-z2 experience">
   <div class="content">
     <h1>Experience</h1>
-    <div>
-      <div class="job">
-        <h2>Cislink</h2>
-        <div class="location">
-          <mat-icon [inline]="true">place</mat-icon> Moscow
-        </div>
-        <div class="title">Front End Developer (Angular 6+)</div>
-        <div class="time">September 2019 - December 2019</div>
-        <div class="description">
-          December 2019 Web application development.
-        </div>
-      </div>
 
-      <div class="job">
-        <h2>Ofd.ru</h2>
-        <div class="location">
-          <mat-icon [inline]="true">place</mat-icon> Moscow
-        </div>
-        <div class="title">Web Developer (Angular 6+)</div>
-        <div class="time">November 2018 - August 2019</div>
-        <div class="description">
-          Document automation system development. - Web-based digital signature
-          plugin integration.
-        </div>
-      </div>
+    <app-chip-selection class="filter" [list]="filterTags" (onselected)="filterJobs($event)"></app-chip-selection>
 
-      <div class="job">
-        <h2>Competentum</h2>
-        <div class="location">
-          <mat-icon [inline]="true">place</mat-icon> Dolgoprudny (Moscow)
+    <div class="job-list">
+      <div class="job" *ngFor="let job of data">
+        <div>
+          <h2>{{ job.company }}</h2>
+          <div class="time">
+            {{ job.dateStart | date: "MMM y" }} -
+            {{ job.dateEnd | date: "MMM y" }}
+          </div>
         </div>
-        <div class="title">Web Developer (.NET/Full Stack)</div>
-        <div class="time">March 2018 - October 2018</div>
-        <div class="description">KPI application development and support.</div>
-      </div>
+        <div>
+          <h3 class="title">{{ job.title }}</h3>
 
-      <div class="job">
-        <h2>WCH Service Bureau</h2>
-        <div class="location">
-          <mat-icon [inline]="true">place</mat-icon> Tashkent
-        </div>
-        <div class="title">Web Developer (Full Stack)</div>
-        <div class="time">November 2016 - December 2017</div>
-        <div class="description">Single-page application development.</div>
-      </div>
+          <div class="tags">
+            <mat-chip-list aria-label="Tag selection">
+              <mat-chip *ngFor="let item of job.tags">
+                {{ item }}
+              </mat-chip>
+            </mat-chip-list>
+          </div>
 
-      <div class="job">
-        <h2>Modern Communications</h2>
-        <div class="location">
-          <mat-icon [inline]="true">place</mat-icon> Tashkent
-        </div>
-        <div class="title">Web Developer (.NET/Full Stack)</div>
-        <div class="time">January 2015 - January 2016</div>
-        <div class="description">Web application development and support.</div>
-      </div>
-
-      <div class="job">
-        <h2>Metrafor</h2>
-        <div class="location">
-          <mat-icon [inline]="true">place</mat-icon> Tashkent
-        </div>
-        <div class="title">.NET Developer</div>
-        <div class="time">august 2013 - November 2014</div>
-        <div class="description">
-          Web and desktop application development and support.
+          <div class="description">
+            {{ job.description }}
+<!-- 
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio
+            eos recusandae porro labore obcaecati consequuntur, ut voluptatibus
+            beatae reprehenderit eaque sit debitis dolore odit unde doloribus.
+            Nesciunt distinctio provident laboriosam? -->
+          </div>
+          <div class="job-footer">
+            <div class="location">
+              <mat-icon [inline]="true">place</mat-icon> {{ job.location }}
+            </div>
+            <div *ngIf="job.website">
+              &nbsp; |
+              <a [href]="job.website">
+                <mat-icon [inline]="true">link</mat-icon> {{ job.website }}
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

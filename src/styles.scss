@@ -17,6 +17,13 @@ a {
   text-decoration: none;
 }
 
+// .mat-standard-chip.mat-chip-with-trailing-icon {
+//   font-size: 12px;
+//   padding: 6px;
+//   border-radius: 2px;
+//   min-height: 20px;
+// }
+
 .back {
   z-index: -1;
   position: fixed;
@@ -52,7 +59,7 @@ article {
 .block {
   transition: all ease 0.3s;
   position: relative;
-  padding: 20px 40px;
+  padding: 40px;
   // margin: 20px;
   // min-height: 100%;
   // box-shadow: 0 -10px 8px 3px #ccc;
@@ -70,10 +77,6 @@ article {
   a {
     text-decoration: none;
     color: #fff;
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
 }
 
@@ -127,7 +130,7 @@ article {
 
 .about {
   .card {
-    max-width: 200px;
+    max-width: 280px;
   }
 }
 
