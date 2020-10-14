@@ -11,10 +11,10 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ExperienceComponent } from './articles/experience/experience.component';
-import { ContactsComponent } from './articles/contacts/contacts.component';
-import { InterestsComponent } from './articles/interests/interests.component';
-import { ProjectsComponent } from './articles/projects/projects.component';
+import { ExperienceComponent } from './sections/experience/experience.component';
+import { ContactsComponent } from './sections/contacts/contacts.component';
+import { InterestsComponent } from './sections/interests/interests.component';
+import { ProjectsComponent } from './sections/projects/projects.component';
 import { ChipSelectionComponent } from './components/chip-selection/chip-selection.component';
 
 @NgModule({
