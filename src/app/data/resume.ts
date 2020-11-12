@@ -45,7 +45,7 @@ export const resume = {
     },
     {
       company: `Competentum`,
-      location: `Dolgoprudny (Moscow)`,
+      location: `Moscow`,
       title: `Web Developer (.NET/Full Stack)`,
       website: `https://competentum.ru`,
       dateStart: `March 2018 `,
