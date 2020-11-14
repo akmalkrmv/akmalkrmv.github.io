@@ -24,25 +24,25 @@ a {
 //   min-height: 20px;
 // }
 
-.back {
-  z-index: -1;
-  position: fixed;
-  top: -10px;
-  bottom: -10px;
-  left: -10px;
-  right: -10px;
-  width: 110%;
-  filter: blur(2px);
-  background-color: #000;
-  background-position: -460px -280px;
-  background-repeat: no-repeat;
-  background-size: auto 1200px;
-  background-image: url(/assets/images/profile.jpg);
-  //   background-image: url(/assets/images/profile.jpg),
-  //     linear-gradient(to left, #000000, #f1f1f1);
-  //   background-image: url(/assets/images/profile.jpg),
-  //     linear-gradient(to left, #000000, #393939, #717171, #afafaf, #f1f1f1);
-}
+// .back {
+//   z-index: -1;
+//   position: fixed;
+//   top: -10px;
+//   bottom: -10px;
+//   left: -10px;
+//   right: -10px;
+//   width: 110%;
+//   filter: blur(2px);
+//   background-color: #000;
+//   background-position: -460px -280px;
+//   background-repeat: no-repeat;
+//   background-size: auto 1200px;
+//   background-image: url(/assets/images/profile.jpg);
+//   //   background-image: url(/assets/images/profile.jpg),
+//   //     linear-gradient(to left, #000000, #f1f1f1);
+//   //   background-image: url(/assets/images/profile.jpg),
+//   //     linear-gradient(to left, #000000, #393939, #717171, #afafaf, #f1f1f1);
+// }
 
 .placeholder {
   height: 100%;
