@@ -17,6 +17,7 @@ import { InterestsComponent } from './sections/interests/interests.component';
 import { ProjectsComponent } from './sections/projects/projects.component';
 import { ChipSelectionComponent } from './components/chip-selection/chip-selection.component';
 import { HeaderComponent } from './sections/header/header.component';
+import { AboutComponent } from './sections/about/about.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { HeaderComponent } from './sections/header/header.component';
     ProjectsComponent,
     ChipSelectionComponent,
     HeaderComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
