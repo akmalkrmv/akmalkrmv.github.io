@@ -1,0 +1,42 @@
+.card {
+  max-width: 280px;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px 80px;
+
+  .profile-pic {
+    margin: 20px 0;
+    width: 160px;
+    height: 160px;
+    border-radius: 100%;
+    box-shadow: 0 0 8px 1px #ccc;
+
+    background-image: url("~/assets/images/profile.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .profile-pic img {
+    width: 100%;
+    display: none;
+  }
+
+  .links {
+    font-size: 1.4em;
+
+    a mat-icon {
+      font-size: 1.6em;
+      line-height: 40px;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+}

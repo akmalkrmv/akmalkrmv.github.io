@@ -1,51 +1,49 @@
 <div class="experience">
-  <div class="content">
-    <h1>Experience</h1>
+  <h1>Experience</h1>
 
-    <app-chip-selection
-      class="filter"
-      [list]="filterTags"
-      (onselected)="filterJobs($event)"
-    ></app-chip-selection>
+  <app-chip-selection
+    class="filter"
+    [list]="filterTags"
+    (onselected)="filterJobs($event)"
+  ></app-chip-selection>
 
-    <div class="job-list">
-      <div class="job" *ngFor="let job of data">
-        <div>
-          <h2>{{ job.company }}</h2>
-          <div class="time">
-            {{ job.dateStart | date: "MMM y" }} -
-            {{ job.dateEnd | date: "MMM y" }}
-          </div>
+  <div class="job-list">
+    <div class="job" *ngFor="let job of data">
+      <div>
+        <h2>{{ job.company }}</h2>
+        <div class="time">
+          {{ job.dateStart | date: "MMM y" }} -
+          {{ job.dateEnd | date: "MMM y" }}
         </div>
-        <div>
-          <h3 class="title">{{ job.title }}</h3>
+      </div>
+      <div>
+        <h3 class="title">{{ job.title }}</h3>
 
-          <div class="tags">
-            <mat-chip-list aria-label="Tag selection">
-              <mat-chip *ngFor="let item of job.tags">
-                {{ item }}
-              </mat-chip>
-            </mat-chip-list>
-          </div>
+        <div class="tags">
+          <mat-chip-list aria-label="Tag selection">
+            <mat-chip *ngFor="let item of job.tags">
+              {{ item }}
+            </mat-chip>
+          </mat-chip-list>
+        </div>
 
-          <div class="description">
-            {{ job.description }}
-            <!-- 
+        <div class="description">
+          {{ job.description }}
+          <!-- 
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio
             eos recusandae porro labore obcaecati consequuntur, ut voluptatibus
             beatae reprehenderit eaque sit debitis dolore odit unde doloribus.
             Nesciunt distinctio provident laboriosam? -->
+        </div>
+        <div class="job-footer">
+          <div class="location">
+            <mat-icon [inline]="true">place</mat-icon> {{ job.location }}
           </div>
-          <div class="job-footer">
-            <div class="location">
-              <mat-icon [inline]="true">place</mat-icon> {{ job.location }}
-            </div>
-            <div *ngIf="job.website" class="website">
-              &nbsp; |
-              <a [href]="job.website">
-                <mat-icon [inline]="true">link</mat-icon> {{ job.website }}
-              </a>
-            </div>
+          <div *ngIf="job.website" class="website">
+            &nbsp; |
+            <a [href]="job.website">
+              <mat-icon [inline]="true">link</mat-icon> {{ job.website }}
+            </a>
           </div>
         </div>
       </div>
