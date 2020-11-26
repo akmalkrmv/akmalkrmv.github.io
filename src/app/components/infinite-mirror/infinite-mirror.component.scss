@@ -79,6 +79,8 @@ $neon-color-border: #087be6;
     width: 400px;
     height: 400px;
 
+    transition: transform ease-out .3s;
+
     &:nth-child(n + 6) {
       display: none;
     }

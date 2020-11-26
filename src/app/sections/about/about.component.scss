@@ -1,3 +1,5 @@
+@import "~@angular/material/theming";
+
 .card {
   max-width: 280px;
 }
@@ -14,12 +16,13 @@
     width: 160px;
     height: 160px;
     border-radius: 100%;
-    box-shadow: 0 0 8px 1px #ccc;
 
     background-image: url("~/assets/images/profile.jpg");
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @include mat-elevation(8);
   }
 
   .profile-pic img {
