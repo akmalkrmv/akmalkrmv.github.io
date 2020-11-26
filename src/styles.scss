@@ -28,14 +28,13 @@ section {
   border-bottom: 1px solid #444;
   background-color: #222;
   color: #fff;
-  position: relative;
-  // overflow: hidden;
 
   max-width: 100%;
   min-height: 100vh;
 
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .container {
@@ -55,6 +54,17 @@ section {
 }
 
 .page-transition {
+  $back-darker: #222;
+  $back-lighter: #181818;
+  $left-to-right: polygon(0 0%, 100% 100%, 100% 100%, 0 100%);
+  $right-to-left: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+
+  @mixin transition-polygon($z, $back, $path) {
+    z-index: $z;
+    background-color: $back;
+    clip-path: $path;
+  }
+
   position: relative;
   background-color: #111;
   border-bottom: none;
@@ -71,14 +81,21 @@ section {
     @include mat-elevation(8);
   }
 
-  &::before {
-    z-index: 2;
-    background-color: #181818;
-    clip-path: polygon(0 0, 100% 80%, 100% 100%, 0 100%);
+  &:not(.invert) {
+    &::before {
+      @include transition-polygon(2, $back-lighter, $left-to-right);
+    }
+    &::after {
+      @include transition-polygon(3, $back-darker, $right-to-left);
+    }
   }
-  &::after {
-    z-index: 3;
-    background-color: #222;
-    clip-path: polygon(0 80%, 100% 0, 100% 100%, 0 100%);
+
+  &.invert {
+    &::before {
+      @include transition-polygon(2, $back-lighter, $right-to-left);
+    }
+    &::after {
+      @include transition-polygon(3, $back-darker, $left-to-right);
+    }
   }
 }
