@@ -27,13 +27,10 @@ a {
 section {
   background-color: #222;
   color: #fff;
-
   max-width: 100%;
   min-height: 100vh;
-
   display: flex;
   align-items: center;
-  
   position: relative;
   overflow: hidden;
 }
@@ -82,13 +79,11 @@ section {
     @include mat-elevation(8);
   }
 
-  &:not(.invert) {
-    &::before {
-      @include transition-polygon(2, $back-lighter, $left-to-right);
-    }
-    &::after {
-      @include transition-polygon(3, $back-darker, $right-to-left);
-    }
+  &::before {
+    @include transition-polygon(2, $back-lighter, $left-to-right);
+  }
+  &::after {
+    @include transition-polygon(3, $back-darker, $right-to-left);
   }
 
   &.invert {
@@ -98,5 +93,19 @@ section {
     &::after {
       @include transition-polygon(3, $back-darker, $left-to-right);
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
   }
 }

@@ -1,18 +1,24 @@
+@import 'src/_variables';
+
 $neon-color-inner: #00ccff;
 $neon-color-outer: #ff00c8;
 $neon-color-border: #087be6;
 
-.container {
+.mirrors-container {
   --rotate: 40deg;
   --translateX: 0px;
   --translateY: 0px;
   --translateZ: 0px;
 
+  background-color: $sky-color;
+
   width: 100%;
   height: 100%;
+
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  
   position: relative;
   perspective: 50px;
 

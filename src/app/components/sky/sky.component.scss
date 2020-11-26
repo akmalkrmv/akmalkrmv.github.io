@@ -1,47 +1,34 @@
+@import "src/_variables";
+
 .sky {
   margin: 0;
   padding: 0;
-  background: #002142;
   margin-top: -50px;
   width: 100%;
   height: 100%;
 }
 
-.con {
-  width: 100%;
-  height: 900px;
-  background: #002142;
+.sky-container {
+  width: 300%;
+  height: 100vh;
+  background: $sky-color;
   position: relative;
   overflow: hidden;
 }
 
-@for $i from 1 through 8 {
-  .shoot:nth-child(#{$i}) {
-    width: 5px;
-    height: 5px;
-    background: #fefce6;
-    box-shadow: 0px 1px 30px 0px rgba(255, 255, 255, 1);
-    z-index: 400;
-    position: absolute;
-    border-radius: 50%;
-    margin-left: -1040px;
-    animation: shoot-#{$i} random(4) + s linear 1;
-    animation-delay: $i * 0.01s;
-  }
+.moons {
+  position: absolute;
+  margin-left: 50vw;
+  margin-top: 400px;
+  animation: moveMoon 200s linear infinite;
+}
 
-  @keyframes shoot-#{$i} {
-    0% {
-      margin-left: 0px;
-      margin-top: 100px;
-      width: 8px;
-      height: 8px;
-    }
-    100% {
-      margin-left: 900px;
-      margin-top: 150px + random(40);
-      width: 0px;
-      height: 0px;
-    }
+@keyframes moveMoon {
+  0% {
+    transform: translateX(-50vw);
+  }
+  100% {
+    transform: translateX(150vw);
   }
 }
 
@@ -52,17 +39,15 @@
     height: $d;
 
     border-radius: 50%;
-
     background: #fefce6;
     box-shadow: 0px 1px 30px 0px rgba(255, 255, 255, 1);
 
-    opacity: 1/ ($i * 5);
-
     position: absolute;
     z-index: 10;
+    opacity: 1 / ($i * 5);
 
-    margin-left: calc(50% - #{$d}/ 2);
-    margin-top: calc(400px - #{$d}/ 2);
+    margin-left: -$d / 2;
+    margin-top: -$d / 2;
   }
 
   .moon:nth-child(1) {
@@ -70,11 +55,10 @@
 
     $d: 150px;
     width: $d;
-    z-index: 10;
     height: $d;
 
-    margin-left: calc(50% - #{$d}/ 2);
-    margin-top: calc(400px - #{$d}/ 2);
+    margin-left: -$d / 2;
+    margin-top: -$d / 2;
   }
 }
 
@@ -94,14 +78,13 @@ $stars: 100;
     $d: random(2);
     width: $d + px;
     height: $d + px;
-    z-index: 1;
     background: white;
 
     border-radius: 50%;
+    opacity: 1;
+    z-index: 1;
 
     position: absolute;
-
-    opacity: 1;
 
     margin-left: random(1500) + px;
     margin-top: random(875) + px;
