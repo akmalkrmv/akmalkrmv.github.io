@@ -5,7 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:prod": "ng build --prod --output-path docs --base-href https://akmalkrmv.github.io/bio/",
+    "build:prod": "ng build --prod --output-path docs",
+    "build:bio": "ng build --prod --output-path docs --base-href https://akmalkrmv.github.io/bio/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
