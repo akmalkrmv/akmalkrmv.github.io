@@ -18,6 +18,7 @@ import { ProjectsComponent } from './sections/projects/projects.component';
 import { ChipSelectionComponent } from './components/chip-selection/chip-selection.component';
 import { HeaderComponent } from './sections/header/header.component';
 import { AboutComponent } from './sections/about/about.component';
+import { InfiniteMirrorComponent } from './components/infinite-mirror/infinite-mirror.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AboutComponent } from './sections/about/about.component';
     ChipSelectionComponent,
     HeaderComponent,
     AboutComponent,
+    InfiniteMirrorComponent,
   ],
   imports: [
     BrowserModule,
