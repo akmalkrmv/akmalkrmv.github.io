@@ -67,3 +67,14 @@ $neon-color-border: #087be6;
     perspective: 45px;
   }
 }
+
+@media (max-width: 600px) {
+  .frame {
+    width: 400px;
+    height: 400px;
+
+    &:nth-child(n + 6) {
+      display: none;
+    }
+  }
+}
