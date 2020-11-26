@@ -1,8 +1,12 @@
-<section class="block mat-elevation-z2 experience">
+<div class="experience">
   <div class="content">
     <h1>Experience</h1>
 
-    <app-chip-selection class="filter" [list]="filterTags" (onselected)="filterJobs($event)"></app-chip-selection>
+    <app-chip-selection
+      class="filter"
+      [list]="filterTags"
+      (onselected)="filterJobs($event)"
+    ></app-chip-selection>
 
     <div class="job-list">
       <div class="job" *ngFor="let job of data">
@@ -26,13 +30,13 @@
 
           <div class="description">
             {{ job.description }}
-<!-- 
+            <!-- 
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio
             eos recusandae porro labore obcaecati consequuntur, ut voluptatibus
             beatae reprehenderit eaque sit debitis dolore odit unde doloribus.
             Nesciunt distinctio provident laboriosam? -->
           </div>
-          <div class="job-footer" >
+          <div class="job-footer">
             <div class="location">
               <mat-icon [inline]="true">place</mat-icon> {{ job.location }}
             </div>
@@ -47,4 +51,4 @@
       </div>
     </div>
   </div>
-</section>
+</div>

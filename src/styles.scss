@@ -1,3 +1,5 @@
+@import "~@angular/material/theming";
+
 *,
 ::before,
 ::after {
@@ -8,69 +10,23 @@ html,
 body {
   height: 100%;
   margin: 0;
+  padding: 0;
 }
 
 body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: #eee;
+  background-color: #222;
+  color: #fff;
 }
 
 a {
   text-decoration: none;
 }
 
-// .mat-standard-chip.mat-chip-with-trailing-icon {
-//   font-size: 12px;
-//   padding: 6px;
-//   border-radius: 2px;
-//   min-height: 20px;
-// }
-
-// .back {
-//   z-index: -1;
-//   position: fixed;
-//   top: -10px;
-//   bottom: -10px;
-//   left: -10px;
-//   right: -10px;
-//   width: 110%;
-//   filter: blur(2px);
-//   background-color: #000;
-//   background-position: -460px -280px;
-//   background-repeat: no-repeat;
-//   background-size: auto 1200px;
-//   background-image: url(/assets/images/profile.jpg);
-//   //   background-image: url(/assets/images/profile.jpg),
-//   //     linear-gradient(to left, #000000, #f1f1f1);
-//   //   background-image: url(/assets/images/profile.jpg),
-//   //     linear-gradient(to left, #000000, #393939, #717171, #afafaf, #f1f1f1);
-// }
-
-.placeholder {
-  height: 100%;
-  width: 100%;
-}
-
-section {
-  .content {
-    max-width: 1200px;
-    margin: auto;
-  }
-}
-
-.block {
-  transition: all ease 0.3s;
-  position: relative;
+.content {
+  max-width: 1200px;
+  margin: auto;
   padding: 40px;
-  // margin: 20px;
-  // min-height: 100%;
-  // box-shadow: 0 -10px 8px 3px #ccc;
-  border-bottom: 1px solid #aaa;
-
-  background-color: #222;
-  color: #fff;
-  // background-color: #fff;
-  // color: #333;
 
   h1 {
     text-align: center;
@@ -82,21 +38,45 @@ section {
   }
 }
 
+.page-transition {
+  position: relative;
+  background-color: #111;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 80%;
+
+    @include mat-elevation(8);
+  }
+
+  &::before {
+    z-index: 2;
+    background-color: #181818;
+    clip-path: polygon(0 0, 100% 80%, 100% 100%, 0 100%);
+  }
+  &::after {
+    top: 85%;
+    z-index: 3;
+    background-color: #222;
+    clip-path: polygon(0 80%, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
 .info {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  // & > div {
-  //   flex-grow: 1;
-  // }
 
   .profile-pic {
     margin: 20px 80px 20px 0;
     width: 160px;
     height: 160px;
     border-radius: 100%;
-    //   border: 4px solid #ccc;
     box-shadow: 0 0 8px 1px #ccc;
 
     background-image: url("~/assets/images/profile.jpg");
