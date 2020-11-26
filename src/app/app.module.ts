@@ -19,6 +19,7 @@ import { ChipSelectionComponent } from './components/chip-selection/chip-selecti
 import { HeaderComponent } from './sections/header/header.component';
 import { AboutComponent } from './sections/about/about.component';
 import { InfiniteMirrorComponent } from './components/infinite-mirror/infinite-mirror.component';
+import { SkyComponent } from './components/sky/sky.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { InfiniteMirrorComponent } from './components/infinite-mirror/infinite-m
     HeaderComponent,
     AboutComponent,
     InfiniteMirrorComponent,
+    SkyComponent,
   ],
   imports: [
     BrowserModule,
