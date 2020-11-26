@@ -8,3 +8,11 @@ section {
   margin: 0 auto;
   max-width: 1000px;
 }
+
+app-infinite-mirror {
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  background-color: #111;
+}
