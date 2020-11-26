@@ -12,7 +12,7 @@ export const resume = {
       title: `Front End Developer (Angular)`,
       website: `https://oneclick.chat`,
       dateStart: `April 2020`,
-      dateEnd: `August 2020`,
+      dateEnd: `September 2020`,
       concept: JobConcept.frontend,
       tags: ['Angular', 'Typescript', 'WebRTC'],
       projects: [],
