@@ -52,6 +52,25 @@ section {
   }
 }
 
+.projects a {
+  color: yellowgreen;
+}
+
+.tags {
+  margin-bottom: 10px;
+  max-width: 50ch;
+
+  .mat-chip {
+    font-size: 12px;
+  }
+
+  .mat-standard-chip {
+    padding: 6px;
+    border-radius: 2px;
+    min-height: 20px;
+  }
+}
+
 .page-transition {
   $back-darker: #222;
   $back-lighter: #181818;
