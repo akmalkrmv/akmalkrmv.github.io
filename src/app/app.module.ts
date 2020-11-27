@@ -20,6 +20,7 @@ import { HeaderComponent } from './sections/header/header.component';
 import { AboutComponent } from './sections/about/about.component';
 import { InfiniteMirrorComponent } from './components/infinite-mirror/infinite-mirror.component';
 import { SkyComponent } from './components/sky/sky.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { SkyComponent } from './components/sky/sky.component';
     AboutComponent,
     InfiniteMirrorComponent,
     SkyComponent,
+    CarouselComponent,
   ],
   imports: [
     BrowserModule,
