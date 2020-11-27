@@ -16,9 +16,14 @@
       </div>
 
       <mat-card-content>
-        <p>
-          {{ project.description }}
-        </p>
+        <div class="tags">
+          <mat-chip-list aria-label="Project tool">
+            <mat-chip *ngFor="let item of project.tools">
+              {{ item }}
+            </mat-chip>
+          </mat-chip-list>
+        </div>
+        <p [innerHTML]="project.description"></p>
       </mat-card-content>
 
       <mat-card-actions>
