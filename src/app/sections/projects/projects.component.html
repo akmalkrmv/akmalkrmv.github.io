@@ -1,8 +1,53 @@
 <div class="projects">
   <h1>Projects</h1>
-  <div>
-    <p>
-      <a href="https://akmalkrmv.github.io/uno/">UNO</a>
-    </p>
+
+  <div class="project-list">
+    <mat-card class="project-item" *ngFor="let project of projects">
+      <mat-card-header>
+        <div mat-card-avatar>
+          <mat-icon>local_offer</mat-icon>
+        </div>
+        <mat-card-title>{{ project.title }}</mat-card-title>
+        <mat-card-subtitle>{{ project.subtitle }}</mat-card-subtitle>
+      </mat-card-header>
+
+      <div class="project-iamge">
+        <img [src]="project.image" />
+      </div>
+
+      <mat-card-content>
+        <p>
+          {{ project.description }}
+        </p>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <a mat-button [href]="project.link" target="_blank" color="accent">
+          VISIT
+        </a>
+        <!-- <button mat-button>LIKE</button> -->
+      </mat-card-actions>
+    </mat-card>
+
+    <!-- <div class="project-item" *ngFor="let project of projects">
+      <div class="project-title">
+        <h2>{{ project.title }}</h2>
+      </div>
+
+      <div class="project-iamge">
+        <img [src]="project.image" />
+      </div>
+
+      <div class="project-description">
+        {{ project.description }}
+      </div>
+
+      <div class="project-footer">
+        <a [href]="project.link" target="_blank">
+          <mat-icon [inline]="true">link</mat-icon>
+          {{ project.link }}
+        </a>
+      </div>
+    </div> -->
   </div>
 </div>
