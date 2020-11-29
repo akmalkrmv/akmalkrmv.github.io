@@ -15,6 +15,14 @@
     object-fit: cover;
   }
 
+  .mat-tab-body-content {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   &__images-container {
     width: 100%;
     height: 100%;
@@ -22,7 +30,6 @@
 
   &__image {
     width: 100%;
-    // height: 100%;
     object-fit: cover;
   }
 
@@ -36,14 +43,14 @@
     z-index: 10;
 
     max-width: 100px;
-    width: 10vw;
-    height: 50%;
+    width: 8vw;
+    height: 30%;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background-color: #1111;
+    background-color: #1113;
     cursor: pointer;
 
     &:first-child {
@@ -53,8 +60,10 @@
       right: 0;
     }
 
-    &:hover {
-      background-color: #1113;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: #1115;
     }
   }
 }
