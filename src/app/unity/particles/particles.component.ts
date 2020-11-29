@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 declare const createUnityInstance: any;
-
 @Component({
   selector: 'app-particles',
   templateUrl: './particles.component.html',
@@ -9,9 +9,13 @@ declare const createUnityInstance: any;
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ParticlesComponent implements OnInit {
-  constructor() {}
+  public progress$ = new BehaviorSubject(0);
+  public fullscreen$ = new BehaviorSubject(false);
 
-  ngOnInit(): void {
+  private fullscreen = false;
+  private unityInstance: any = false;
+
+  async ngOnInit() {
     const buildUrl = '/assets/unity/particles/';
     const config = {
       dataUrl: buildUrl + '/particles.data',
@@ -26,8 +30,23 @@ export class ParticlesComponent implements OnInit {
 
     const container = document.getElementById('unity-canvas');
     const totalMemory = 568435456;
-    const onLoading = () => {}
+    const onLoading = (progress: number) => {
+      this.progress$.next(progress * 100);
+    };
 
-    createUnityInstance(container, config, onLoading, totalMemory);
+    this.unityInstance = await createUnityInstance(
+      container,
+      config,
+      onLoading,
+      totalMemory
+    );
+  }
+
+  public async toggleFullscreen() {
+    this.fullscreen = !this.fullscreen;
+
+    await this.unityInstance.setFullscreen(this.fullscreen ? 1 : 0);
+
+    this.fullscreen$.next(this.fullscreen);
   }
 }

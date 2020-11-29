@@ -1,3 +1,15 @@
 <div class="unity-canvas-wrapper">
+  <div class="loading">
+    <mat-progress-bar
+      mode="determinate"
+      [value]="progress$ | async"
+    ></mat-progress-bar>
+  </div>
+
   <canvas class="unity-canvas" id="unity-canvas"></canvas>
+
+  <div class="fullscreen" (click)="toggleFullscreen()">
+    <mat-icon *ngIf="!(fullscreen$ | async)">fullscreen</mat-icon>
+    <mat-icon *ngIf="fullscreen$ | async">fullscreen_exit</mat-icon>
+  </div>
 </div>
