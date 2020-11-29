@@ -24,6 +24,12 @@
         </div>
       </ng-container>
 
+      <ng-container *ngIf="project.video">
+        <div class="project-iamge">
+          <video [src]="project.video" autoplay controls loop></video>
+        </div>
+      </ng-container>
+
       <mat-card-content>
         <div class="tags">
           <mat-chip-list aria-label="Project tool">
@@ -42,6 +48,5 @@
         <!-- <button mat-button>LIKE</button> -->
       </mat-card-actions>
     </mat-card>
-
   </div>
 </div>

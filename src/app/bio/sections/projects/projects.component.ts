@@ -58,5 +58,20 @@ export class ProjectsComponent {
         <a href="https://www.youtube.com/watch?v=G6JTM-zt-dQ" target="_blank">Web Dev Simplified</a> video,
         but logic was coded entirely from scratch.`,
     },
+
+    {
+      title: 'Particles',
+      subtitle: 'Experiment using Unity and WebGL',
+      link: '/unity/particles',
+      tools: ['Unity', 'WebGL'],
+
+      images: [''],
+      video: 'assets/videos/particles.mp4',
+
+      description: `
+        Experimenting with Unity, particularly building and converting to WebGL,
+        integrating with Angular project. For this project used assets from Unity.
+        This project is only for demo puposes.`,
+    },
   ];
 }
