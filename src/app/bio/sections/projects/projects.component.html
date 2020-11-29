@@ -11,11 +11,18 @@
         <mat-card-subtitle>{{ project.subtitle }}</mat-card-subtitle>
       </mat-card-header>
 
-      <app-carousel class="project-images" [images]="project.images"></app-carousel>
+      <ng-container *ngIf="project.images && project.images.length > 1">
+        <app-carousel
+          class="project-images"
+          [images]="project.images"
+        ></app-carousel>
+      </ng-container>
 
-      <!-- <div class="project-iamge">
-        <img [src]="project.images[0]" />
-      </div> -->
+      <ng-container *ngIf="project.images && project.images.length == 1">
+        <div class="project-iamge">
+          <img [src]="project.images[0]" />
+        </div>
+      </ng-container>
 
       <mat-card-content>
         <div class="tags">
@@ -36,25 +43,5 @@
       </mat-card-actions>
     </mat-card>
 
-    <!-- <div class="project-item" *ngFor="let project of projects">
-      <div class="project-title">
-        <h2>{{ project.title }}</h2>
-      </div>
-
-      <div class="project-iamge">
-        <img [src]="project.image" />
-      </div>
-
-      <div class="project-description">
-        {{ project.description }}
-      </div>
-
-      <div class="project-footer">
-        <a [href]="project.link" target="_blank">
-          <mat-icon [inline]="true">link</mat-icon>
-          {{ project.link }}
-        </a>
-      </div>
-    </div> -->
   </div>
 </div>
