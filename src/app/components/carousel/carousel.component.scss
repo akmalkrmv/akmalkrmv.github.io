@@ -1,0 +1,60 @@
+.carousel {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 400px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .image-wrapper,
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__images-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image {
+    width: 100%;
+    // height: 100%;
+    object-fit: cover;
+  }
+
+  &__tab {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__nav {
+    position: absolute;
+    z-index: 10;
+
+    max-width: 100px;
+    width: 10vw;
+    height: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #1111;
+    cursor: pointer;
+
+    &:first-child {
+      left: 0;
+    }
+    &:last-child {
+      right: 0;
+    }
+
+    &:hover {
+      background-color: #1113;
+    }
+  }
+}
