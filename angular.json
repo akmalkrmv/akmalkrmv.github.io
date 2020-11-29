@@ -32,7 +32,9 @@
               "src/styles.theme.scss",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/unity/unity.asm.loader.js"
+            ]
           },
           "configurations": {
             "production": {
