@@ -1,5 +1,17 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 
+interface Project {
+  title: string;
+  subtitle: string;
+  description: string;
+
+  link?: string;
+  tools: string[];
+
+  video?: string;
+  images: string[];
+}
+
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
@@ -7,13 +19,16 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectsComponent {
-  public projects = [
+  public projects: Project[] = [
     {
       title: 'Uno',
       subtitle: 'WebRTC video chat',
-      image: 'assets/images/pc-video-chat-black.jpg',
       link: 'https://uno-app.web.app',
       tools: ['Angular', 'TypeScript', 'Firebase', 'WebRTC'],
+
+      images: ['assets/images/pc-video-chat-black.jpg'],
+      video: '',
+
       description: `
         Side project for understanding how WebRTC works. 
         It contain audio-video communication using browser API,
@@ -25,9 +40,17 @@ export class ProjectsComponent {
     {
       title: 'Battleship',
       subtitle: 'Real time multiplayer game',
-      image: 'assets/images/battleship_1.jpg',
       link: 'https://battleship-uno.web.app',
       tools: ['Angular', 'TypeScript', 'Firebase'],
+
+      images: [
+        'assets/images/battleship_1.jpg',
+        'assets/images/battleship_2.png',
+        'assets/images/battleship_3.png',
+        'assets/images/battleship_4.png',
+      ],
+      video: '',
+
       description: `
         Battleship game implemented using Firebase for signalling, 
         and Andgular for UI. It has match making system to connect and find created games.

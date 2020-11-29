@@ -11,9 +11,11 @@
         <mat-card-subtitle>{{ project.subtitle }}</mat-card-subtitle>
       </mat-card-header>
 
-      <div class="project-iamge">
-        <img [src]="project.image" />
-      </div>
+      <app-carousel class="project-images" [images]="project.images"></app-carousel>
+
+      <!-- <div class="project-iamge">
+        <img [src]="project.images[0]" />
+      </div> -->
 
       <mat-card-content>
         <div class="tags">
