@@ -1,43 +1,79 @@
 @import "~@angular/material/theming";
 
-.unity-canvas-wrapper {
+.unity-canvas-container {
   width: 100%;
-  min-height: 100%;
+  max-height: 100%;
+  padding: 1vmin;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  position: relative;
+  .unity-canvas-wrapper {
+    width: 960px;
+    height: 600px;
+    max-width: 100%;
+    max-height: 100%;
 
-  .loading {
-    position: absolute;
-    top: 0;
+    object-fit: cover;
+    background: #333;
+
+    position: relative;
+
+    @include mat-elevation(4);
+
+    .loading {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      color: #fffd;
+      font-size: 2rem;
+      font-weight: 100;
+      text-transform: uppercase;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .progress {
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      .mat-progress-bar .mat-progress-bar-buffer {
+        background-color: #666;
+      }
+      .mat-progress-bar .mat-progress-bar-fill::after {
+        background-color: #111;
+      }
+    }
+
+    canvas {
+      width: 960px;
+      height: 600px;
+      max-width: 100%;
+      max-height: 100%;
+
+      object-fit: cover;
+      background: #333;
+    }
+
+    .fullscreen {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+
+      padding: 10px;
+      border-radius: 100%;
+      background-color: #1115;
+      color: #fff;
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
-
-  .fullscreen {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-
-    border-radius: 100%;
-    background-color: #1115;
-    color: #fff;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-canvas {
-  width: 960px;
-  height: 600px;
-  max-width: 100%;
-  max-height: 100%;
-
-  object-fit: cover;
-  background: #333;
-
-  @include mat-elevation(8);
 }
