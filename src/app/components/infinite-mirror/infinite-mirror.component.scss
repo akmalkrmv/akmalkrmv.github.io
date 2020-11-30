@@ -40,7 +40,7 @@ $neon-color-border: #087be6;
   //   transition: transform ease-out .3s;
 }
 
-@for $i from 0 through 20 {
+@for $i from 0 through 10 {
   .frame:nth-child(#{$i}) {
     transform: rotate(var(--rotate))
       translateY(calc(var(--translateY) + #{$i * 50px}))

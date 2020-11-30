@@ -16,9 +16,13 @@ import { Throttle } from 'src/app/decorators';
 export class InfiniteMirrorComponent {
   @ViewChild('container') container: ElementRef;
 
+  public range(n: number): number[] {
+    return [...Array(n).keys()];
+  }
+
+  @Throttle(50)
   @HostListener('document:mousemove', ['$event'])
-  @Throttle(20)
-  onMouseMove({ clientX, clientY }: MouseEvent) {
+  public onMouseMove({ clientX, clientY }: MouseEvent) {
     const root = this.container.nativeElement;
     const angle = this.getAngleInDegrees(500, clientX, clientY);
 
