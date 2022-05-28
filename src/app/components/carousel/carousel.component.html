@@ -1,20 +1,28 @@
 <div class="carousel">
   <div class="carousel__nav" (click)="prev()">
-    <button mat-icon-button><mat-icon>navigate_before</mat-icon></button>
+    <button mat-icon-button color="none">
+      <mat-icon>navigate_before</mat-icon>
+    </button>
   </div>
 
   <mat-tab-group
-    class="carousel__images-container"
     headerPosition="below"
     mat-align-tabs="center"
     [selectedIndex]="selectedIndex"
   >
-    <mat-tab *ngFor="let img of images" class="carousel__tab" label="*">
-      <img class="carousel__image" [src]="img" />
+    <mat-tab *ngFor="let img of images" class="carousel__tab">
+      <ng-template mat-tab-label>
+        <mat-icon class="material-icons-outlined">image</mat-icon>
+      </ng-template>
+      <div class="carousel__images-container">
+        <img class="carousel__image" [src]="img" />
+      </div>
     </mat-tab>
   </mat-tab-group>
 
   <div class="carousel__nav" (click)="next()">
-    <button mat-icon-button><mat-icon>navigate_next</mat-icon></button>
+    <button mat-icon-button color="none">
+      <mat-icon>navigate_next</mat-icon>
+    </button>
   </div>
 </div>

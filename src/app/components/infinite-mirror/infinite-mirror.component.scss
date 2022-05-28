@@ -1,4 +1,4 @@
-@import 'src/_variables';
+@import "src/_variables";
 
 $neon-color-inner: #00ccff;
 $neon-color-outer: #ff00c8;
@@ -18,7 +18,7 @@ $neon-color-border: #087be6;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  
+
   position: relative;
   perspective: 50px;
 
@@ -37,7 +37,7 @@ $neon-color-border: #087be6;
 
   filter: brightness(1.5) contrast(3);
   animation: breathing 3s ease-out infinite;
-  //   transition: transform ease-out .3s;
+  // transition: transform ease-out 0.3s;
 }
 
 @for $i from 0 through 10 {
@@ -79,10 +79,10 @@ $neon-color-border: #087be6;
     width: 400px;
     height: 400px;
 
-    transition: transform ease-out .3s;
+    transition: transform ease-out 0.3s;
 
-    &:nth-child(n + 6) {
-      display: none;
-    }
+    // &:nth-child(n + 6) {
+    //   display: none;
+    // }
   }
 }

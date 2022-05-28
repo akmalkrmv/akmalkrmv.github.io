@@ -29,18 +29,14 @@
 
         <div class="description">
           {{ job.description }}
-          <!-- 
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio
-            eos recusandae porro labore obcaecati consequuntur, ut voluptatibus
-            beatae reprehenderit eaque sit debitis dolore odit unde doloribus.
-            Nesciunt distinctio provident laboriosam? -->
         </div>
+
         <div class="job-footer">
           <div class="location">
             <mat-icon [inline]="true">place</mat-icon> {{ job.location }}
           </div>
           <div *ngIf="job.website" class="website">
-            &nbsp; |
+            &nbsp; | &nbsp;
             <a [href]="job.website">
               <mat-icon [inline]="true">link</mat-icon> {{ job.website }}
             </a>

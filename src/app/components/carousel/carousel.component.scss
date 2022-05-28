@@ -2,8 +2,6 @@
   position: relative;
   overflow: hidden;
 
-  min-height: 400px;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,58 +10,52 @@
   .image-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-  }
-
-  .mat-tab-body-content {
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    object-fit: scale-down;
   }
 
   &__images-container {
-    width: 100%;
     height: 100%;
+    max-height: min(50vw, 70vh);
+    max-width: 100%;
+    overflow: hidden !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__image {
-    width: 100%;
-    object-fit: cover;
-  }
-
-  &__tab {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    object-fit: scale-down;
   }
 
   &__nav {
     position: absolute;
     z-index: 10;
 
-    max-width: 100px;
-    width: 8vw;
-    height: 30%;
-
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background-color: #1113;
-    cursor: pointer;
-
     &:first-child {
-      left: 0;
+      left: 2rem;
     }
     &:last-child {
-      right: 0;
+      right: 2rem;
     }
 
     &:hover,
     &:focus,
     &:active {
-      background-color: #1115;
+      .mat-icon {
+        opacity: 1;
+      }
+    }
+
+    .mat-icon {
+      opacity: 0.7;
+      width: 48px !important;
+      height: 48px !important;
+      font-size: 48px !important;
     }
   }
 }

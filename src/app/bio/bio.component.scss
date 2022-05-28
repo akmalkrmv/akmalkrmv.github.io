@@ -5,3 +5,15 @@
   height: 100vh;
   background-color: #111;
 }
+
+.parallax-container {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+}
+
+.parallax-background {
+  transform: translateZ(-10px) scale(2);
+  z-index: -1;
+}

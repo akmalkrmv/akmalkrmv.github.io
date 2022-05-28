@@ -26,7 +26,13 @@
 
       <ng-container *ngIf="project.video">
         <div class="project-iamge">
-          <video [src]="project.video" autoplay controls loop></video>
+          <video
+            [src]="project.video"
+            [muted]="true"
+            autoplay
+            controls
+            loop
+          ></video>
         </div>
       </ng-container>
 
@@ -45,7 +51,6 @@
         <a mat-button [href]="project.link" target="_blank" color="accent">
           VISIT
         </a>
-        <!-- <button mat-button>LIKE</button> -->
       </mat-card-actions>
     </mat-card>
   </div>

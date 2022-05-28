@@ -35,9 +35,9 @@
 
 @for $i from 1 through 8 {
   .moon:nth-child(#{$i}) {
-    $d: $i * 100px;
-    width: $d;
-    height: $d;
+    $size: $i * 100px;
+    width: $size;
+    height: $size;
 
     border-radius: 50%;
     background: #fefce6;
@@ -47,19 +47,19 @@
     z-index: 10;
     opacity: 1 / ($i * 5);
 
-    margin-left: -$d / 2;
-    margin-top: -$d / 2;
+    margin-left: -$size / 2;
+    margin-top: -$size / 2;
   }
 
   .moon:nth-child(1) {
     opacity: 1;
 
-    $d: 150px;
-    width: $d;
-    height: $d;
+    $size: 150px;
+    width: $size;
+    height: $size;
 
-    margin-left: -$d / 2;
-    margin-top: -$d / 2;
+    margin-left: -$size / 2;
+    margin-top: -$size / 2;
   }
 }
 
@@ -76,9 +76,9 @@ $stars: 100;
 
 @for $i from 0 through $stars {
   .star:nth-child(#{$i}) {
-    $d: random(2);
-    width: $d + px;
-    height: $d + px;
+    $size: random(3) + px;
+    width: $size;
+    height: $size;
     background: white;
 
     border-radius: 50%;
@@ -86,21 +86,19 @@ $stars: 100;
     z-index: 1;
 
     position: absolute;
+    top: random(100) + vh;
+    left: random(100) + vw;
 
-    margin-left: random(1500) + px;
-    margin-top: random(875) + px;
-
-    animation: twinkle-#{$i} 1s linear infinite;
-    animation-delay: $i * 0.01s;
+    animation: twinkle 1s linear infinite;
+    animation-delay: $i * 10ms;
   }
+}
 
-  @keyframes twinkle-#{$i} {
-    from {
-      opacity: 1;
-    }
-
-    to {
-      opacity: 0.3;
-    }
+@keyframes twinkle {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.3;
   }
 }
