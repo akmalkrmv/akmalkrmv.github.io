@@ -7,6 +7,18 @@ export enum JobConcept {
 export const resume = {
   jobs: [
     {
+      company: `Haraba`,
+      location: `Moscow`,
+      title: `Front End Developer (Angular)`,
+      website: `https://haraba.ru`,
+      dateStart: `March 2021`,
+      dateEnd: `August 2021`,
+      concept: JobConcept.frontend,
+      tags: ['Angular', 'Typescript', 'WebRTC'],
+      projects: [],
+      description: `Web application development.`,
+    },
+    {
       company: `OneClick.chat`,
       location: `Remote`,
       title: `Front End Developer (Angular)`,
