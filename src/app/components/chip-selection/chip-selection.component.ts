@@ -8,7 +8,7 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import {
   MatAutocompleteSelectedEvent,
   MatAutocomplete,
@@ -34,7 +34,7 @@ export class ChipSelectionComponent {
   public selectable = true;
   public removable = true;
   public separatorKeysCodes: number[] = [ENTER, COMMA];
-  public chipCtrl = new FormControl();
+  public chipCtrl = new UntypedFormControl();
   public filteredChips: Observable<string[]>;
   public chips: string[] = [];
 
