@@ -10,7 +10,7 @@ $neon-color-border: #087be6;
   --translateY: 0px;
   --translateZ: 0px;
 
-  background-color: $sky-color;
+  background-color: var(--mirrors-background);
 
   width: 100%;
   height: 100%;

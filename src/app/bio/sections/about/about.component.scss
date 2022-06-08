@@ -23,6 +23,12 @@
     background-size: cover;
 
     @include mat-elevation(8);
+
+    // animation-name: wobble;
+    // animation-duration: 6s;
+    // animation-timing-function: linear;
+    // animation-iteration-count: infinite;
+    // animation-direction: alternate;
   }
 
   .profile-pic img {
@@ -41,5 +47,23 @@
       text-align: center;
       vertical-align: middle;
     }
+  }
+}
+
+@keyframes wobble {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 44% 56% 70%;
+  }
+  25% {
+    border-radius: 37% 63% 65% 35% / 30% 44% 56% 70%;
+  }
+  50% {
+    border-radius: 37% 63% 65% 35% / 44% 35% 65% 56%;
+  }
+  75% {
+    border-radius: 51% 49% 32% 68% / 51% 35% 65% 49%;
+  }
+  100% {
+    border-radius: 51% 49% 43% 57% / 57% 41% 59% 43%;
   }
 }

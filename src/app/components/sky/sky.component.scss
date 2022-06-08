@@ -11,7 +11,7 @@
 .sky-container {
   width: 300%;
   height: 100vh;
-  background: $sky-color;
+  background-color: var(--sky-color);
   position: relative;
   overflow: hidden;
 }
@@ -44,23 +44,24 @@
     box-shadow: 0px 1px 30px 0px rgba(255, 255, 255, 1);
 
     position: absolute;
-    z-index: 10;
+    z-index: 20 - $i;
     opacity: 1 / ($i * 5);
 
     margin-left: -$size / 2;
     margin-top: -$size / 2;
   }
+}
 
-  .moon:nth-child(1) {
-    opacity: 1;
+.moon:nth-child(1) {
+  opacity: 1;
 
-    $size: 150px;
-    width: $size;
-    height: $size;
+  $size: 150px;
+  width: $size;
+  height: $size;
 
-    margin-left: -$size / 2;
-    margin-top: -$size / 2;
-  }
+  margin-left: -$size / 2;
+  margin-top: -$size / 2;
+  cursor: pointer;
 }
 
 .stars {

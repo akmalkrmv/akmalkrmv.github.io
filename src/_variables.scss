@@ -51,7 +51,15 @@ $dark-green-theme: mat-dark-theme(
   $dark-green-warn
 );
 
-// $sky-color: #002142;
-// $sky-color: #031221;
-// $sky-color: #111;
-$sky-color: #031021;
+// $light-green-primary: mat-palette($mat-indigo);
+// $light-green-accent: mat-palette($mat-pink, A200, A100, A400);
+$light-green-primary: mat-palette($mat-deep-purple);
+$light-green-accent: mat-palette($custom-green);
+// The warn palette is optional (defaults to red).
+$light-green-warn: mat-palette($mat-red);
+
+$light-green-theme: mat-light-theme(
+  $light-green-primary,
+  $light-green-accent,
+  $light-green-warn
+);

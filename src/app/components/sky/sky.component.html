@@ -1,7 +1,8 @@
 <div class="sky">
   <div class="sky-container">
     <div class="moons">
-      <div class="moon" *ngFor="let moon of range(8)"></div>
+      <div class="moon" (click)="toggleTheme()"></div>
+      <div class="moon" *ngFor="let moon of range(7)"></div>
     </div>
 
     <div class="stars">

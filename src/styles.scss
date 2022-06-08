@@ -1,5 +1,18 @@
 @import "~@angular/material/theming";
 
+:root {
+  --text-color: #fff;
+  --background-color: #222;
+  --background-darker-color: #111;
+  --background-lighter-color: #181818;
+
+  // --sky-color: #002142;
+  // --sky-color: #031221;
+  // --sky-color: #111;
+  --sky-color: #031021;
+  --mirrors-background: #031021;
+}
+
 *,
 ::before,
 ::after {
@@ -16,18 +29,35 @@ body {
 
 body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: #222;
-  color: #fff;
+  background-color: var(--background-color);
+  color: var(--text-color);
 
   a {
     text-decoration: none;
-    color: #fff;
+    color: var(--text-color);
   }
 }
 
+body.light-theme {
+  --text-color: #222;
+  --background-color: #fff;
+  --background-darker-color: #eee;
+  --background-lighter-color: #d8d8d8;
+  --sky-color: hsl(45deg 100% 50%);
+  --sky-color: hsl(199deg 100% 50%);
+  --mirrors-background: #aaa;
+  --mirrors-background: hsl(199deg 100% 50%);
+  --mirrors-background: hsl(199deg 100% 75%);
+  --mirrors-background: #f2f2f2;
+
+  // .stars {
+  //   display: none;
+  // }
+}
+
 section {
-  background-color: #222;
-  color: #fff;
+  background-color: var(--background-color);
+  color: var(--text-color);
   max-width: 100%;
   min-height: 100vh;
   display: flex;
@@ -48,48 +78,31 @@ section {
 
   a {
     text-decoration: none;
-    color: #fff;
-  }
-}
-
-.projects a {
-  color: yellowgreen;
-}
-
-.tags {
-  margin-bottom: 10px;
-  max-width: 50ch;
-
-  .mat-chip {
-    font-size: 12px;
-  }
-
-  .mat-standard-chip {
-    padding: 6px;
-    border-radius: 2px;
-    min-height: 20px;
+    color: var(--text-color);
   }
 }
 
 .darker-background {
-  background-color: #111;
+  background-color: var(--background-darker-color);
 }
 
 .page-transition {
-  $back-darker: #222;
-  $back-lighter: #181818;
+  // $back-darker: red;
+  // $back-lighter: green;
+  $back-darker: var(--background-color);
+  $back-lighter: var(--background-lighter-color);
   $left-to-right: polygon(0 0%, 100% 100%, 100% 100%, 0 100%);
   $right-to-left: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+
+  position: relative;
+  border-bottom: none;
+  overflow: visible;
 
   @mixin transition-polygon($z, $back, $path) {
     z-index: $z;
     clip-path: $path;
     background-color: $back;
   }
-
-  position: relative;
-  border-bottom: none;
-  overflow: visible;
 
   &::before,
   &::after {
@@ -99,8 +112,17 @@ section {
     top: -12vh;
     left: -1px;
     right: -1px;
+  }
 
-    @include mat-elevation(8);
+  &-bottom {
+    &::before,
+    &::after {
+      top: 0;
+      transform: rotate(180deg);
+    }
+    &::after {
+      top: -1px;
+    }
   }
 
   &::before {
