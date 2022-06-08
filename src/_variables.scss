@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @import "~@angular/material/theming";
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
@@ -38,14 +39,14 @@ $custom-green: (
 
 // $dark-green-primary: mat-palette($mat-indigo);
 // $dark-green-accent: mat-palette($mat-pink, A200, A100, A400);
-$dark-green-primary: mat-palette($mat-deep-purple);
-$dark-green-accent: mat-palette($custom-green);
+$dark-green-primary: mat.define-palette(mat.$deep-purple-palette);
+$dark-green-accent: mat.define-palette($custom-green);
 
 // The warn palette is optional (defaults to red).
-$dark-green-warn: mat-palette($mat-red);
+$dark-green-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$dark-green-theme: mat-dark-theme(
+$dark-green-theme: mat.define-dark-theme(
   $dark-green-primary,
   $dark-green-accent,
   $dark-green-warn
@@ -53,12 +54,12 @@ $dark-green-theme: mat-dark-theme(
 
 // $light-green-primary: mat-palette($mat-indigo);
 // $light-green-accent: mat-palette($mat-pink, A200, A100, A400);
-$light-green-primary: mat-palette($mat-deep-purple);
-$light-green-accent: mat-palette($custom-green);
+$light-green-primary: mat.define-palette(mat.$deep-purple-palette);
+$light-green-accent: mat.define-palette($custom-green);
 // The warn palette is optional (defaults to red).
-$light-green-warn: mat-palette($mat-red);
+$light-green-warn: mat.define-palette(mat.$red-palette);
 
-$light-green-theme: mat-light-theme(
+$light-green-theme: mat.define-light-theme(
   $light-green-primary,
   $light-green-accent,
   $light-green-warn

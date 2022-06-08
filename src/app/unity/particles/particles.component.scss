@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @import "~@angular/material/theming";
 
 .unity-canvas-container {
@@ -20,7 +21,7 @@
 
     position: relative;
 
-    @include mat-elevation(4);
+    @include mat.elevation(4);
 
     .loading {
       position: absolute;

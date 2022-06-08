@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @import "src/_variables";
 
 .experience {
@@ -44,7 +45,7 @@
 
       .location,
       .website a {
-        color: mat-color($dark-green-accent);
+        color: mat.get-color-from-palette($dark-green-accent);
       }
     }
   }
