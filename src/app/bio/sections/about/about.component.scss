@@ -17,8 +17,9 @@
     width: 160px;
     height: 160px;
     border-radius: 100%;
+    overflow: hidden;
 
-    background-image: url("~/assets/images/profile.jpg");
+    background-image: url("/assets/images/profile.jpg");
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -34,7 +35,8 @@
 
   .profile-pic img {
     width: 100%;
-    display: none;
+    aspect-ratio: 1;
+    object-fit: cover;
   }
 
   .links {
