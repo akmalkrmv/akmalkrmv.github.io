@@ -12,8 +12,11 @@
       <div>
         <h2>{{ job.company }}</h2>
         <div class="time">
-          {{ job.dateStart | date: "MMM y" }} -
-          {{ job.dateEnd | date: "MMM y" }}
+          <!-- <span>
+            {{ job.dateStart | date: "MMM y" }} -
+            {{ job.dateEnd | date: "MMM y" }}
+          </span> -->
+          <span>{{ job.dateStart }} - {{ job.dateEnd }}</span>
         </div>
       </div>
       <div>
