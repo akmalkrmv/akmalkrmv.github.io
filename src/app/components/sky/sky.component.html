@@ -1,9 +1,20 @@
 <div class="sky">
   <div class="sky-container">
     <div class="moons">
-      <div class="moon" (click)="toggleTheme()"></div>
+      <div
+        class="moon"
+        matRipple
+        [matRippleRadius]="200"
+        [matRippleCentered]="true"
+        [matRippleUnbounded]="true"
+        (click)="toggleTheme()"
+      ></div>
       <div class="moon" *ngFor="let moon of range(7)"></div>
     </div>
+
+    <!-- <div class="clouds">
+      <div class="cloud" *ngFor="let cloud of range(10)"></div>
+    </div> -->
 
     <div class="stars">
       <div class="star" *ngFor="let star of range(100)"></div>

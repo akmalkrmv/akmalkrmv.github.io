@@ -6,6 +6,9 @@
   --background-darker-color: #111;
   --background-lighter-color: #181818;
 
+  --scrollbar-thumb: #aaa;
+  --scrollbar-thumb-hover: #888;
+
   // --sky-color: #002142;
   // --sky-color: #031221;
   // --sky-color: #111;
@@ -43,16 +46,42 @@ body.light-theme {
   --background-color: #fff;
   --background-darker-color: #eee;
   --background-lighter-color: #d8d8d8;
+
+  --scrollbar-thumb: #666;
+  --scrollbar-thumb-hover: #888;
+
   --sky-color: hsl(45deg 100% 50%);
   --sky-color: hsl(199deg 100% 50%);
+
   --mirrors-background: #aaa;
   --mirrors-background: hsl(199deg 100% 50%);
   --mirrors-background: hsl(199deg 100% 75%);
   --mirrors-background: #f2f2f2;
+}
 
-  // .stars {
-  //   display: none;
-  // }
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  margin-block: 0.5rem;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border: 0.25rem solid transparent;
+  border-radius: 0.5rem;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
+}
+
+@supports (scrollbar-color: red blue) {
+  * {
+    scrollbar-color: var(--scrollbar-thumb) transparent;
+    scrollbar-width: thin;
+  }
 }
 
 section {
@@ -87,8 +116,6 @@ section {
 }
 
 .page-transition {
-  // $back-darker: red;
-  // $back-lighter: green;
   $back-darker: var(--background-color);
   $back-lighter: var(--background-lighter-color);
   $left-to-right: polygon(0 0%, 100% 100%, 100% 100%, 0 100%);
