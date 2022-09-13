@@ -10,7 +10,7 @@ export interface Project {
   images: string[];
 }
 
-export const PROJECTS = [
+export const PROJECTS: Project[] = [
   {
     title: 'Uno',
     subtitle: 'WebRTC video chat',
@@ -26,6 +26,27 @@ export const PROJECTS = [
         no frameworks used, to understand how it really works under the hood.
         It has also message chat, implemented using firabase realtime database.
         Firebase also used for authentification. Ongoing open source project.`,
+  },
+
+  {
+    title: 'Sozler',
+    subtitle: 'Uzbek version Wordle game',
+    link: 'https://qqsdev.github.io/sozler/',
+    tools: ['Angular', 'TypeScript', 'NodeJs'],
+
+    images: ['assets/images/sozler_1.png', 'assets/images/sozler_2.png'],
+    video: '',
+
+    description: `
+        <a href="https://www.nytimes.com/games/wordle/index.html" target="_blank">Wordle</a>
+        is a web-based word game created and developed by Welsh software engineer Josh Wardle,
+        which inspired many others to create variations of this game, such as
+        <a href="https://octordle.com/" target="_blank">Octordle</a>, 
+        <a href="https://www.symble.app/" target="_blank">Symble</a>,
+        <a href="https://www.mathler.com/" target="_blank">Mathler</a> and many others.
+        Also many creators created clones in many other languages, me included.
+        This project was enjoyable challenge, from rethinking word matching algorithm 
+        to gathering uzbek words dictionary.`,
   },
 
   {

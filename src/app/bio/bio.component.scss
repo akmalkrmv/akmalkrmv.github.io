@@ -17,3 +17,14 @@
   transform: translateZ(-10px) scale(2);
   z-index: -1;
 }
+
+main {
+  // scroll-snap-type: y proximity;
+
+  & > section {
+    /* Choose how to align children on scroll */
+    scroll-snap-align: start;
+    /* Prevents scrolling past more than one child */
+    scroll-snap-stop: always;
+  }
+}
