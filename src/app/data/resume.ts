@@ -7,6 +7,18 @@ export enum JobConcept {
 export const resume = {
   jobs: [
     {
+      company: `GuruSoftware`,
+      location: `Cyprus, Remote`,
+      title: `Front End Developer (Angular)`,
+      website: `https://puninwine.com/`,
+      dateStart: `Oct 2022`,
+      dateEnd: `Feb 2024`,
+      concept: JobConcept.frontend,
+      tags: ['Angular', 'Typescript', 'Web Performance Optimization'],
+      projects: [],
+      description: `Main role was optimization of web performance for eCommerce application, also creating components, creating reusable parts. Exchanging and researching ideas for optimization of pages for bots, users, and SEO scoring.`,
+    },
+    {
       company: `Haraba`,
       location: `Moscow`,
       title: `Front End Developer (Angular)`,
@@ -14,7 +26,7 @@ export const resume = {
       dateStart: `Mar 2021`,
       dateEnd: `Aug 2021`,
       concept: JobConcept.frontend,
-      tags: ['Angular', 'Typescript', 'WebRTC'],
+      tags: ['Angular', 'Typescript'],
       projects: [],
       description: `Web application development.`,
     },
@@ -50,7 +62,7 @@ export const resume = {
       dateStart: `Nov 2018`,
       dateEnd: `Aug 2019`,
       concept: JobConcept.frontend,
-      tags: ['Ang', 'Typescript'],
+      tags: ['Angular', 'Typescript'],
       projects: [],
       description: `Document automation system development. - Web-based digital signature
           plugin integration.`,

@@ -43,8 +43,14 @@
       margin-top: 10px;
       display: flex;
 
+      .website {
+        display: inline-flex;
+      }
+
       .location,
       .website a {
+        display: inline-flex;
+        gap: 4px;
         color: mat.get-color-from-palette($dark-green-accent);
       }
     }
